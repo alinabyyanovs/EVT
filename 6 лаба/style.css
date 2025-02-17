@@ -1,0 +1,108 @@
+html {
+  font-family: sans-serif;
+}
+
+
+body {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+header {
+  background: rgb(52, 206, 142);
+  height: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
+button {
+  margin: 50px;
+  font-size: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.vibrate-button {
+  animation: vibrate 0.1s infinite;
+}
+
+.vibrate-button:hover {
+  animation: none;
+  background-color: green;
+}
+.link {
+  font-size: 20px;
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.link::after {
+  content: ''; 
+  position: absolute; 
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px; 
+  background: green;
+  transition: width 0.3s ease, left 0.3s ease; 
+}
+
+.link:hover::after {
+  width: 100%; 
+  left: 0; 
+}
+
+.link:hover {
+  color: green;
+}
+
+
+.ball {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 50%;
+  position: absolute;
+  bottom:0;
+  right:50%;
+  left: calc(50% - 25px); /* Центрирование мячика */
+  animation: drop 2s ease-in;
+}
+
+
+@keyframes drop {
+  0% {
+      transform: translateY(-350px);
+  }
+  20% {
+      transform: translateY(0px);
+  }
+  40% {
+      transform: translateY(-200px); 
+  }
+  60% {
+      transform: translateY(0px);
+  }
+  75% {
+      transform: translateY(-100px); 
+  }
+  85% {
+      transform: translateY(0px);
+  }
+  95% {
+      transform: translateY(-40px); 
+  }
+  100% {
+      transform: translateY(0); 
+  }
+}
