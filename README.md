@@ -24,7 +24,7 @@ def bubble_sort(arr):
     return arr
 ```
 ## 5. Изображение 
-![Картинка]("[D:\Мои документы\Рабочий стол\3 курс\ЭВТ 2\8 лаба\Пример того, что должно получиться.jpg](https://github.com/alinabyyanovs/EVT/blob/main/README.md)" "Это моя картинка")
+![Картинка](https://cs6.pikabu.ru/post_img/big/2015/08/04/10/1438710211_68941089.jpg "Животные")
 
 ## 6. Заключение
 
