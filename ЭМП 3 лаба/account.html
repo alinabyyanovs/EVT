@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - Glow Beauty</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Glow <span>Beauty</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="booking.html">Запись</a></li>
+                    <li><a href="account.html" class="active">Личный кабинет</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Личный кабинет</h1>
+        </div>
+    </section>
+
+    <section class="account">
+        <div class="container">
+            <div class="account-sidebar">
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/100" alt="Анна Петрова" class="user-avatar">
+                    <h3>Анна Петрова</h3>
+                    <p>Клиент с 2022 года</p>
+                </div>
+                <nav class="account-menu">
+                    <ul>
+                        <li><a href="#bookings" class="active"><i class="fas fa-calendar-alt"></i> Мои записи</a></li>
+                        <li><a href="#history"><i class="fas fa-history"></i> История посещений</a></li>
+                        <li><a href="#favorites"><i class="fas fa-heart"></i> Избранное</a></li>
+                        <li><a href="#settings"><i class="fas fa-cog"></i> Настройки</a></li>
+                        <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Выйти</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="account-content">
+                <div class="account-section active" id="bookings">
+                    <h2>Мои записи</h2>
+                    <div class="bookings-list">
+                        <div class="booking-card">
+                            <div class="booking-info">
+                                <h3>Женская стрижка</h3>
+                                <p><i class="fas fa-user"></i> Мария Иванова</p>
+                                <p><i class="fas fa-calendar-day"></i> 15 июня 2023</p>
+                                <p><i class="fas fa-clock"></i> 14:30 - 16:00</p>
+                            </div>
+                            <div class="booking-actions">
+                                <button class="btn btn-cancel">Отменить</button>
+                                <button class="btn btn-edit">Изменить</button>
+                            </div>
+                        </div>
+                        <div class="booking-card">
+                            <div class="booking-info">
+                                <h3>SPA-педикюр</h3>
+                                <p><i class="fas fa-user"></i> Анна Петрова</p>
+                                <p><i class="fas fa-calendar-day"></i> 20 июня 2023</p>
+                                <p><i class="fas fa-clock"></i> 11:00 - 12:30</p>
+                            </div>
+                            <div class="booking-actions">
+                                <button class="btn btn-cancel">Отменить</button>
+                                <button class="btn btn-edit">Изменить</button>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="booking.html" class="btn">Записаться на новую процедуру</a>
+                </div>
+
+                <div class="account-section" id="history">
+                    <h2>История посещений</h2>
+                    <div class="history-list">
+                        <div class="history-item">
+                            <h3>Чистка лица</h3>
+                            <p><i class="fas fa-calendar-day"></i> 10 мая 2023</p>
+                            <p><i class="fas fa-user"></i> Елена Сидорова</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="history-item">
+                            <h3>Окрашивание волос</h3>
+                            <p><i class="fas fa-calendar-day"></i> 25 апреля 2023</p>
+                            <p><i class="fas fa-user"></i> Мария Иванова</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="history-item">
+                            <h3>Классический маникюр</h3>
+                            <p><i class="fas fa-calendar-day"></i> 15 апреля 2023</p>
+                            <p><i class="fas fa-user"></i> Анна Петрова</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="account-section" id="favorites">
+                    <h2>Избранное</h2>
+                    <div class="favorites-list">
+                        <div class="favorite-item">
+                            <h3>Мария Иванова</h3>
+                            <p>Парикмахер-стилист</p>
+                            <button class="btn">Записаться</button>
+                        </div>
+                        <div class="favorite-item">
+                            <h3>SPA-педикюр</h3>
+                            <p>Комплексный уход за стопами</p>
+                            <button class="btn">Записаться</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="account-section" id="settings">
+                    <h2>Настройки профиля</h2>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="settings-name">Имя:</label>
+                            <input type="text" id="settings-name" value="Анна Петрова">
+                        </div>
+                        <div class="form-group">
+                            <label for="settings-phone">Телефон:</label>
+                            <input type="tel" id="settings-phone" value="+7 (912) 345-67-89">
+                        </div>
+                        <div class="form-group">
+                            <label for="settings-email">Email:</label>
+                            <input type="email" id="settings-email" value="anna@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="settings-password">Новый пароль:</label>
+                            <input type="password" id="settings-password" placeholder="Оставьте пустым, если не хотите менять">
+                        </div>
+                        <div class="form-group">
+                            <label for="settings-password-confirm">Подтвердите пароль:</label>
+                            <input type="password" id="settings-password-confirm" placeholder="Подтвердите новый пароль">
+                        </div>
+                        <button type="submit" class="btn">Сохранить изменения</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Красивая, 15</p>
+                    <p><i class="fas fa-phone"></i> +7 (123) 456-78-90</p>
+                    <p><i class="fas fa-envelope"></i> info@glowbeauty.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Часы работы</h3>
+                    <p>Пн-Пт: 9:00 - 21:00</p>
+                    <p>Сб-Вс: 10:00 - 20:00</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Glow Beauty. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Переключение между разделами личного кабинета
+        document.querySelectorAll('.account-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Удаляем активный класс у всех ссылок и разделов
+                document.querySelectorAll('.account-menu a').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.account-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Добавляем активный класс к текущей ссылке
+                this.classList.add('active');
+                
+                // Показываем соответствующий раздел
+                const sectionId = this.getAttribute('href');
+                document.querySelector(sectionId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

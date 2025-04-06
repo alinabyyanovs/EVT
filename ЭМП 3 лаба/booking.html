@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись - Glow Beauty</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Glow <span>Beauty</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="booking.html" class="active">Запись</a></li>
+                    <li><a href="account.html">Личный кабинет</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Онлайн запись</h1>
+            <p>Выберите услугу, мастера и удобное время</p>
+        </div>
+    </section>
+
+    <section class="booking-form">
+        <div class="container">
+            <form id="bookingForm">
+                <div class="form-step active" id="step1">
+                    <h2>1. Выберите услугу</h2>
+                    <div class="form-group">
+                        <label for="service">Услуга:</label>
+                        <select id="service" name="service" required>
+                            <option value="">-- Выберите услугу --</option>
+                            <optgroup label="Парикмахерские услуги">
+                                <option value="haircut">Женская стрижка</option>
+                                <option value="coloring">Окрашивание волос</option>
+                                <option value="styling">Укладка</option>
+                                <option value="keratin">Кератиновое выпрямление</option>
+                            </optgroup>
+                            <optgroup label="Маникюр и педикюр">
+                                <option value="manicure">Классический маникюр</option>
+                                <option value="hardware_manicure">Аппаратный маникюр</option>
+                                <option value="gel">Покрытие гель-лак</option>
+                                <option value="pedicure">SPA-педикюр</option>
+                            </optgroup>
+                            <optgroup label="Косметология">
+                                <option value="cleaning">Чистка лица</option>
+                                <option value="biorev">Биоревитализация</option>
+                                <option value="peeling">Пилинг</option>
+                                <option value="face_massage">Массаж лица</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <button type="button" class="btn next-step" data-next="step2">Далее</button>
+                </div>
+
+                <div class="form-step" id="step2">
+                    <h2>2. Выберите мастера</h2>
+                    <div class="form-group">
+                        <label>Мастер:</label>
+                        <div class="masters-grid">
+                            <div class="master-card">
+                                <img src="https://via.placeholder.com/150" alt="Мария Иванова">
+                                <h3>Мария Иванова</h3>
+                                <p>Парикмахер-стилист</p>
+                                <input type="radio" name="master" value="maria" id="master_maria" required>
+                                <label for="master_maria">Выбрать</label>
+                            </div>
+                            <div class="master-card">
+                                <img src="https://via.placeholder.com/150" alt="Анна Петрова">
+                                <h3>Анна Петрова</h3>
+                                <p>Мастер маникюра</p>
+                                <input type="radio" name="master" value="anna" id="master_anna">
+                                <label for="master_anna">Выбрать</label>
+                            </div>
+                            <div class="master-card">
+                                <img src="https://via.placeholder.com/150" alt="Елена Сидорова">
+                                <h3>Елена Сидорова</h3>
+                                <p>Косметолог</p>
+                                <input type="radio" name="master" value="elena" id="master_elena">
+                                <label for="master_elena">Выбрать</label>
+                            </div>
+                            <div class="master-card">
+                                <img src="https://via.placeholder.com/150" alt="Ольга Кузнецова">
+                                <h3>Ольга Кузнецова</h3>
+                                <p>Универсальный мастер</p>
+                                <input type="radio" name="master" value="olga" id="master_olga">
+                                <label for="master_olga">Выбрать</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn prev-step" data-prev="step1">Назад</button>
+                        <button type="button" class="btn next-step" data-next="step3">Далее</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step3">
+                    <h2>3. Выберите дату и время</h2>
+                    <div class="form-group">
+                        <label for="date">Дата:</label>
+                        <input type="date" id="date" name="date" required min="">
+                    </div>
+                    <div class="form-group">
+                        <label>Доступное время:</label>
+                        <div class="time-slots">
+                            <input type="radio" name="time" value="10:00" id="time_10" required>
+                            <label for="time_10">10:00</label>
+                            
+                            <input type="radio" name="time" value="11:30" id="time_1130">
+                            <label for="time_1130">11:30</label>
+                            
+                            <input type="radio" name="time" value="13:00" id="time_13">
+                            <label for="time_13">13:00</label>
+                            
+                            <input type="radio" name="time" value="14:30" id="time_1430">
+                            <label for="time_1430">14:30</label>
+                            
+                            <input type="radio" name="time" value="16:00" id="time_16">
+                            <label for="time_16">16:00</label>
+                            
+                            <input type="radio" name="time" value="17:30" id="time_1730">
+                            <label for="time_1730">17:30</label>
+                            
+                            <input type="radio" name="time" value="19:00" id="time_19">
+                            <label for="time_19">19:00</label>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn prev-step" data-prev="step2">Назад</button>
+                        <button type="button" class="btn next-step" data-next="step4">Далее</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step4">
+                    <h2>4. Ваши контактные данные</h2>
+                    <div class="form-group">
+                        <label for="name">Ваше имя:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Комментарий (необязательно):</label>
+                        <textarea id="comments" name="comments" rows="3"></textarea>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn prev-step" data-prev="step3">Назад</button>
+                        <button type="submit" class="btn">Подтвердить запись</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="booking-confirmation" style="display: none;">
+        <div class="container">
+            <div class="confirmation-card">
+                <i class="fas fa-check-circle"></i>
+                <h2>Запись подтверждена!</h2>
+                <p>Мы ждем вас в салоне Glow Beauty в указанное время.</p>
+                <p>Детали записи отправлены на вашу электронную почту.</p>
+                <a href="index.html" class="btn">Вернуться на главную</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Красивая, 15</p>
+                    <p><i class="fas fa-phone"></i> +7 (123) 456-78-90</p>
+                    <p><i class="fas fa-envelope"></i> info@glowbeauty.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Часы работы</h3>
+                    <p>Пн-Пт: 9:00 - 21:00</p>
+                    <p>Сб-Вс: 10:00 - 20:00</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Glow Beauty. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Устанавливаем минимальную дату (сегодня)
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+        
+        // Обработка многошаговой формы
+        document.querySelectorAll('.next-step').forEach(button => {
+            button.addEventListener('click', function() {
+                const currentStep = this.closest('.form-step');
+                const nextStepId = this.getAttribute('data-next');
+                
+                currentStep.classList.remove('active');
+                document.getElementById(nextStepId).classList.add('active');
+            });
+        });
+        
+        document.querySelectorAll('.prev-step').forEach(button => {
+            button.addEventListener('click', function() {
+                const currentStep = this.closest('.form-step');
+                const prevStepId = this.getAttribute('data-prev');
+                
+                currentStep.classList.remove('active');
+                document.getElementById(prevStepId).classList.add('active');
+            });
+        });
+        
+        // Обработка отправки формы
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Здесь можно добавить AJAX-запрос для отправки данных на сервер
+            
+            // Показываем подтверждение
+            document.querySelector('.booking-form').style.display = 'none';
+            document.querySelector('.booking-confirmation').style.display = 'block';
+            
+            // Прокручиваем к подтверждению
+            document.querySelector('.booking-confirmation').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
