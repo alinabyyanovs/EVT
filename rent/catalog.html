@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrimeRent | Каталог недвижимости</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/chat.css">
+  <link rel="stylesheet" href="styles/catalog.css">
+  
+ 
+</head>
+<body>
+  <header id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-home"></i>
+        <span>PrimeRent</span>
+      </a>
+      
+      <nav class="nav-desktop">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html" class="active">Каталог</a>
+        <a href="contact.html">О нас</a>
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+      
+      <div class="burger-menu" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <div class="nav-mobile" id="navMobile">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html" class="active">Каталог</a>
+        <a href="contact.html">О нас</a>
+        <button class="theme-toggle" id="themeToggleMobile">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="margin-top: var(--header-height);">
+    <section class="catalog">
+      <div class="container">
+        <div class="section-title">
+          <h2>Каталог недвижимости</h2>
+          <p>Найдите идеальный вариант для аренды</p>
+        </div>
+
+        <div class="search-section">
+          <div class="search-row">
+            <input type="text" class="search-input" id="searchInput" placeholder="Поиск по названию, адресу или описанию...">
+            <button class="btn" id="searchBtn">
+              <i class="fas fa-search"></i> Найти
+            </button>
+          </div>
+
+          <div class="filter-row">
+            <div class="filter-group">
+              <label for="propertyType" class="filter-label">Тип недвижимости</label>
+              <select id="propertyType" class="filter-select">
+                <option value="all">Все типы</option>
+                <option value="apartment">Квартира</option>
+                <option value="house">Дом</option>
+                <option value="office">Офис</option>
+                <option value="commercial">Коммерческая</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="city" class="filter-label">Город</label>
+              <select id="city" class="filter-select">
+                <option value="all">Все города</option>
+                <option value="minsk">Минск</option>
+                <option value="grodno">Гродно</option>
+                <option value="vitebsk">Витебск</option>
+                <option value="gomel">Гомель</option>
+                <option value="brest">Брест</option>
+                <option value="mogilev">Могилев</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="priceRange" class="filter-label">Цена (BYN/мес)</label>
+              <select id="priceRange" class="filter-select">
+                <option value="all">Любая</option>
+                <option value="0-500">До 500</option>
+                <option value="500-1000">500-1000</option>
+                <option value="1000-1500">1000-1500</option>
+                <option value="1500-2000">1500-2000</option>
+                <option value="2000+">От 2000</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="rooms" class="filter-label">Комнат</label>
+              <select id="rooms" class="filter-select">
+                <option value="all">Любое</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4+">4+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-actions">
+            <div class="results-count" id="resultsCount">Найдено: 10 объектов</div>
+            <button class="btn btn-outline" id="resetFilters">
+              <i class="fas fa-undo"></i> Сбросить фильтры
+            </button>
+          </div>
+        </div>
+
+        <div class="property-grid" id="propertyGrid">
+        </div>
+
+        <div class="pagination" id="pagination">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>PrimeRent</h4>
+          <p>Премиальная аренда недвижимости в Беларуси. Лучшие предложения на рынке.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-viber"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Навигация</h4>
+          <div class="footer-links">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="contact.html">О нас</a>
+            <a href="#">Условия аренды</a>
+            <a href="#">FAQ</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Контакты</h4>
+          <div class="footer-contact">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <a href="https://www.google.com/maps/search/?api=1&query=Минск, ул. Ленина, 15" target="_blank" rel="noopener noreferrer">
+                <span>Минск, ул. Ленина, 15</span>
+              </a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="#" class="contact-link" onclick="showCallModal(event)">+375 (29) 123-45-67</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>info@primerent.by</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <span>Пн-Пт: 9:00-19:00<br>Сб-Вс: 10:00-16:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>© 2025 PrimeRent. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Call Modal -->
+  <div class="call-modal" id="callModal">
+    <div class="modal-content" style="background: white; max-width: 400px; width: 90%;">
+      <button class="modal-close" onclick="closeCallModal()" style="color: #000; font-size: 24px; position: absolute; right: 15px; top: 15px; background: none; border: none; cursor: pointer;">&times;</button>
+      <div style="text-align: center; padding: 30px;">
+        <div class="call-animation">
+          <i class="fas fa-phone-volume fa-3x" style="color: var(--primary-color); margin-bottom: 20px;"></i>
+          <div class="ripple"></div>
+        </div>
+        <p style="font-size: 1.2rem; margin: 20px 0;">Идет звонок на номер:</p>
+        <p style="font-size: 1.5rem; font-weight: bold; margin: 10px 0; color: #000;">+375 (29) 123-45-67</p>
+        <div id="callTimer" style="font-size: 2rem; font-weight: bold; color: var(--primary-color); margin: 20px 0;">00:00</div>
+        <button class="btn" style="background-color: #dc3545; color: white; width: 100%;" onclick="closeCallModal()">
+          <i class="fas fa-phone-slash"></i> Завершить звонок
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Modal -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="bookingForm">
+        <h3 class="modal-title" id="bookingTitle">Забронировать просмотр</h3>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="bookingName" class="form-label">Ваше имя</label>
+            <input type="text" id="bookingName" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="bookingPhone" class="form-label">Телефон</label>
+            <input type="tel" id="bookingPhone" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="bookingEmail" class="form-label">Email</label>
+            <input type="email" id="bookingEmail" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="bookingDate" class="form-label">Дата просмотра</label>
+            <input type="date" id="bookingDate" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="bookingTime" class="form-label">Время просмотра</label>
+            <select id="bookingTime" class="form-control" required>
+              <option value="">Выберите время</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bookingNotes" class="form-label">Дополнительные пожелания</label>
+            <textarea id="bookingNotes" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline" id="cancelBooking">Отменить</button>
+          <button class="btn" id="confirmBooking">Подтвердить бронирование</button>
+        </div>
+      </div>
+      
+      <div class="success-message" id="bookingSuccess">
+        <i class="fas fa-check-circle"></i>
+        <h3>Бронирование подтверждено!</h3>
+        <p>Мы отправили детали бронирования на ваш email.</p>
+        <p>Наш менеджер свяжется с вами для подтверждения времени.</p>
+        <button class="btn" id="closeSuccessBtn">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Modal -->
+  <div class="modal" id="chatModal">
+    <div class="modal-content chat-modal">
+      <button class="modal-close" id="chatModalClose">&times;</button>
+      <div class="chat-container">
+        <div class="chat-header">
+          <h3 id="chatTitle">Чат с владельцем</h3>
+          <div class="owner-info">
+            <i class="fas fa-phone"></i>
+            <a href="tel:${property.phone.replace(/\s+/g, '')}" title="Позвонить">
+              ${property.phone}
+            </a>
+          </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <!-- Messages will be added here -->
+        </div>
+        <div class="chat-input">
+          <textarea id="messageInput" placeholder="Введите сообщение..."></textarea>
+          <button id="sendMessage" class="btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="styles/chat.js"></script>
+  <script>
+    const properties = [
+      {
+        id: 1,
+        title: "Лофт в центре Минска",
+        type: "apartment",
+        city: "minsk",
+        price: 850,
+        rooms: 2,
+        area: 75,
+        description: "Просторная квартира с панорамными окнами и современным ремонтом. Полностью меблирована и готова к заселению.",
+        address: "Минск, ул. Ленина, 15",
+        features: ["Кондиционер", "Wi-Fi", "Стиральная машина", "Посудомоечная машина"],
+        image: "/фото/loft.png",
+        phone: "+375 (29) 123-45-67",
+        reviews: [
+          { rating: 5, comment: "Отличная квартира, все соответствует описанию!", author: "Анна", date: "2024-03-15" },
+          { rating: 4, comment: "Хорошее расположение, уютно", author: "Иван", date: "2024-03-10" }
+        ]
+      },
+      {
+        id: 2,
+        title: "Дом в Гродно",
+        type: "house",
+        city: "grodno",
+        price: 1200,
+        rooms: 3,
+        area: 110,
+        description: "Уютный дом с садом в тихом районе города. Идеально подходит для семьи.",
+        address: "Гродно, ул. Садовая, 42",
+        features: ["Камин", "Гараж", "Терраса", "Wi-Fi"],
+        image: "/фото/house.png",
+        phone: "+375 (29) 234-56-78",
+        reviews: [
+          { rating: 5, comment: "Прекрасный дом для большой семьи!", author: "Мария", date: "2024-03-12" }
+        ]
+      },
+      {
+        id: 3,
+        title: "Офис в Витебске",
+        type: "office",
+        city: "vitebsk",
+        price: 950,
+        rooms: 4,
+        area: 90,
+        description: "Современное офисное помещение в бизнес-центре. Полностью меблировано и оборудовано.",
+        address: "Витебск, ул. Советская, 25",
+        features: ["Кондиционер", "Wi-Fi", "Принтер", "Кулер"],
+        image: "фото/office.png",
+        phone: "+375 (29) 345-67-89",
+        reviews: [
+          { rating: 5, comment: "Отличное офисное помещение, все необходимое оборудование на месте", author: "Александр", date: "2024-03-14" },
+          { rating: 4, comment: "Хорошая локация, удобная парковка", author: "Елена", date: "2024-03-08" },
+          { rating: 5, comment: "Идеально для нашей компании", author: "Дмитрий", date: "2024-03-01" }
+        ]
+      },
+      {
+        id: 4,
+        title: "Квартира в Бресте",
+        type: "apartment",
+        city: "brest",
+        price: 550,
+        rooms: 1,
+        area: 45,
+        description: "Уютная однокомнатная квартира в новом доме. Отличное расположение в центре города.",
+        address: "Брест, ул. Гоголя, 12",
+        features: ["Кондиционер", "Wi-Fi", "Балкон"],
+        image: "фото/flatbrest.png",
+        phone: "+375 (29) 456-78-90",
+        reviews: [
+          { rating: 4, comment: "Уютная квартира, все чисто и аккуратно", author: "Ольга", date: "2024-03-13" },
+          { rating: 5, comment: "Отличное расположение, рядом все необходимое", author: "Сергей", date: "2024-03-05" }
+        ]
+      },
+      {
+        id: 5,
+        title: "Коммерческое помещение в Могилеве",
+        type: "commercial",
+        city: "mogilev",
+        price: 1500,
+        rooms: 1,
+        area: 120,
+        description: "Просторное коммерческое помещение на первом этаже. Идеально для магазина или кафе.",
+        address: "Могилев, ул. Первомайская, 30",
+        features: ["Отдельный вход", "Санузел", "Парковка"],
+        image: "фото/mogilev.png",
+        phone: "+375 (29) 567-89-01",
+        reviews: [
+          { rating: 5, comment: "Отличное помещение для бизнеса", author: "Николай", date: "2024-03-11" },
+          { rating: 4, comment: "Хорошая проходимость, удобный вход", author: "Татьяна", date: "2024-03-07" }
+        ]
+      },
+      {
+        id: 6,
+        title: "Дом в Гомеле",
+        type: "house",
+        city: "gomel",
+        price: 1100,
+        rooms: 4,
+        area: 150,
+        description: "Просторный дом с участком в пригороде Гомеля. Отличный вариант для большой семьи.",
+        address: "Гомель, ул. Лесная, 5",
+        features: ["Сад", "Гараж", "Камин", "Терраса"],
+        image: "фото/housegomel.png",
+        phone: "+375 (29) 678-90-12",
+        reviews: [
+          { rating: 5, comment: "Прекрасный дом для большой семьи!", author: "Виктор", date: "2024-03-09" },
+          { rating: 5, comment: "Отличный участок, красивый сад", author: "Наталья", date: "2024-03-04" },
+          { rating: 4, comment: "Уютный дом, все необходимое есть", author: "Андрей", date: "2024-03-02" }
+        ]
+      },
+      {
+        id: 7,
+        title: "Квартира в Минске (новостройка)",
+        type: "apartment",
+        city: "minsk",
+        price: 750,
+        rooms: 2,
+        area: 65,
+        description: "Современная квартира в новом жилом комплексе. Отличная транспортная доступность.",
+        address: "Минск, ул. Немига, 10",
+        features: ["Подземная парковка", "Лифт", "Двор без машин"],
+        image: "фото/flatminsk.png",
+        phone: "+375 (29) 789-01-23",
+        reviews: [
+          { rating: 5, comment: "Современная квартира, все новое", author: "Ксения", date: "2024-03-12" },
+          { rating: 4, comment: "Хороший район, развитая инфраструктура", author: "Павел", date: "2024-03-06" }
+        ]
+      },
+      {
+        id: 8,
+        title: "Офис в центре Минска",
+        type: "office",
+        city: "minsk",
+        price: 1800,
+        rooms: 5,
+        area: 110,
+        description: "Престижное офисное помещение в бизнес-центре класса А. Идеально для респектабельной компании.",
+        address: "Минск, пр. Независимости, 45",
+        features: ["Ресепшен", "Конференц-зал", "Кухня", "Система безопасности"],
+        image: "фото/officeminsk.png",
+        phone: "+375 (29) 890-12-34",
+        reviews: [
+          { rating: 5, comment: "Престижное помещение, отличная инфраструктура", author: "Алексей", date: "2024-03-10" },
+          { rating: 5, comment: "Идеально для нашей компании", author: "Екатерина", date: "2024-03-03" },
+          { rating: 4, comment: "Хорошая транспортная доступность", author: "Михаил", date: "2024-03-01" }
+        ]
+      },
+      {
+        id: 9,
+        title: "Квартира-студия в Витебске",
+        type: "apartment",
+        city: "vitebsk",
+        price: 450,
+        rooms: 1,
+        area: 35,
+        description: "Компактная и уютная студия в центре города. Отличный вариант для одного человека.",
+        address: "Витебск, ул. Замковая, 8",
+        features: ["Мебель", "Техника", "Wi-Fi"],
+        image: "фото/mogilevoffice.png",
+        phone: "+375 (29) 901-23-45",
+        reviews: [
+          { rating: 4, comment: "Уютная студия, все необходимое есть", author: "Ангелина", date: "2024-03-08" },
+          { rating: 5, comment: "Отличное расположение в центре", author: "Артем", date: "2024-03-05" }
+        ]
+      },
+      {
+        id: 10,
+        title: "Таунхаус в Минском районе",
+        type: "house",
+        city: "minsk",
+        price: 1300,
+        rooms: 3,
+        area: 120,
+        description: "Современный таунхаус в престижном районе. Собственный дворик и парковка.",
+        address: "Минский р-н, д. Боровляны",
+        features: ["Парковка", "Дворик", "Камин", "Терраса"],
+        image: "фото/tanhouse.png",
+        phone: "+375 (29) 012-34-56",
+        reviews: [
+          { rating: 5, comment: "Отличный таунхаус, современный ремонт", author: "Денис", date: "2024-03-07" },
+          { rating: 5, comment: "Прекрасный район, тихо и спокойно", author: "Юлия", date: "2024-03-04" },
+          { rating: 4, comment: "Хорошая планировка, уютно", author: "Роман", date: "2024-03-02" }
+        ]
+      }
+    ];
+
+    // DOM Elements
+    const propertyGrid = document.getElementById('propertyGrid');
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const propertyTypeFilter = document.getElementById('propertyType');
+    const cityFilter = document.getElementById('city');
+    const priceRangeFilter = document.getElementById('priceRange');
+    const roomsFilter = document.getElementById('rooms');
+    const resetFiltersBtn = document.getElementById('resetFilters');
+    const resultsCount = document.getElementById('resultsCount');
+    const pagination = document.getElementById('pagination');
+    const bookingModal = document.getElementById('bookingModal');
+    const modalCloseBtn = document.getElementById('modalClose');
+    const cancelBookingBtn = document.getElementById('cancelBooking');
+    const confirmBookingBtn = document.getElementById('confirmBooking');
+    const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+    const bookingForm = document.getElementById('bookingForm');
+    const bookingSuccess = document.getElementById('bookingSuccess');
+    const bookingTitle = document.getElementById('bookingTitle');
+
+    // Pagination variables
+    const itemsPerPage = 6;
+    let currentPage = 1;
+    let currentBookingProperty = null;
+    let filteredProperties = [...properties];
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleMobile = document.getElementById('themeToggleMobile');
+    const themeIcon = themeToggle.querySelector('i');
+    const themeIconMobile = themeToggleMobile.querySelector('i');
+
+    // Favorites functionality
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    function toggleFavorite(propertyId) {
+      const index = favorites.indexOf(propertyId);
+      if (index === -1) {
+        favorites.push(propertyId);
+      } else {
+        favorites.splice(index, 1);
+      }
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      updateFavoriteButtons();
+    }
+
+    function updateFavoriteButtons() {
+      document.querySelectorAll('.favorite-btn').forEach(btn => {
+        const propertyId = parseInt(btn.getAttribute('data-id'));
+        if (favorites.includes(propertyId)) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    // Add event listeners to favorite buttons
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.action-btn.favorite')) {
+        const btn = e.target.closest('.action-btn.favorite');
+        const propertyId = parseInt(btn.getAttribute('data-id'));
+        const icon = btn.querySelector('i');
+        
+        // Toggle favorite state
+        icon.classList.toggle('far');
+        icon.classList.toggle('fas');
+        icon.classList.toggle('text-danger');
+        
+        // Show notification
+        const message = icon.classList.contains('fas') ? 
+          'Добавлено в избранное' : 
+          'Удалено из избранного';
+        showNotification(message);
+      }
+      
+      if (e.target.closest('.action-btn.share')) {
+        const btn = e.target.closest('.action-btn.share');
+        const propertyCard = btn.closest('.property-card');
+        const propertyTitle = propertyCard.querySelector('h3').textContent;
+        const shareUrl = window.location.href;
+        
+        if (navigator.share) {
+          navigator.share({
+            title: propertyTitle,
+            url: shareUrl
+          }).catch(console.error);
+        } else {
+          // Fallback for browsers that don't support Web Share API
+          const tempInput = document.createElement('input');
+          tempInput.value = shareUrl;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          showNotification('Ссылка скопирована в буфер обмена');
+        }
+      }
+    });
+
+    // Notification system
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+      notification.innerHTML = `
+        <div class="notification-content">
+          <i class="fas fa-info-circle"></i>
+          <span>${message}</span>
+        </div>
+      `;
+      
+      document.body.appendChild(notification);
+      
+      // Trigger animation
+      setTimeout(() => {
+        notification.classList.add('show');
+      }, 10);
+      
+      // Remove notification after 3 seconds
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 300);
+      }, 3000);
+    }
+
+    // Update favorite buttons on page load
+    document.addEventListener('DOMContentLoaded', updateFavoriteButtons);
+    
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      
+      if (document.body.classList.contains('dark')) {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        themeIconMobile.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        themeIconMobile.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+    
+    themeToggle.addEventListener('click', toggleTheme);
+    themeToggleMobile.addEventListener('click', toggleTheme);
+    
+    // Check saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+      themeIconMobile.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    // Burger menu toggle
+    const burgerMenu = document.getElementById('burgerMenu');
+    const navMobile = document.getElementById('navMobile');
+    
+    burgerMenu.addEventListener('click', () => {
+      burgerMenu.classList.toggle('active');
+      navMobile.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#navMobile a').forEach(link => {
+      link.addEventListener('click', () => {
+        burgerMenu.classList.remove('active');
+        navMobile.classList.remove('active');
+      });
+    });
+
+    // Render properties for current page
+    function renderProperties(propertiesToRender, page = 1) {
+      const start = (page - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const paginatedItems = propertiesToRender.slice(start, end);
+      
+      propertyGrid.innerHTML = '';
+      
+      if (paginatedItems.length === 0) {
+        propertyGrid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center;">Ничего не найдено. Попробуйте изменить параметры поиска.</p>';
+        return;
+      }
+      
+      paginatedItems.forEach(property => {
+        const averageRating = property.reviews ? 
+          (property.reviews.reduce((acc, review) => acc + review.rating, 0) / property.reviews.length).toFixed(1) : 
+          0;
+        
+        const propertyCard = document.createElement('div');
+        propertyCard.className = 'property-card';
+        propertyCard.innerHTML = `
+          <div class="property-img">
+            <img src="${property.image}" alt="${property.title}" loading="lazy">
+            <div class="property-badges">
+              ${property.type === 'apartment' ? '<span class="badge premium">Премиум</span>' : ''}
+              ${property.type === 'house' ? '<span class="badge exclusive">Эксклюзив</span>' : ''}
+              ${property.type === 'office' ? '<span class="badge business">Бизнес</span>' : ''}
+              ${property.type === 'commercial' ? '<span class="badge business">Коммерция</span>' : ''}
+            </div>
+            <div class="property-actions">
+              <button class="action-btn favorite" title="Добавить в избранное" data-id="${property.id}">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="action-btn share" title="Поделиться">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </div>
+          </div>
+          <div class="property-info">
+            <div class="property-header">
+              <h3>${property.title}</h3>
+              ${property.reviews ? `
+                <div class="property-rating">
+                  <i class="fas fa-star"></i>
+                  <span>${averageRating}</span>
+                  <span class="reviews-count">(${property.reviews.length})</span>
+                </div>
+              ` : ''}
+            </div>
+            <p class="property-description">${property.description}</p>
+            <div class="price-tag">
+              <div class="price">${property.price} BYN/мес</div>
+              <div class="price-period">Долгосрочная аренда</div>
+            </div>
+            <div class="features">
+              <div class="feature"><i class="fas fa-city"></i> ${getCityName(property.city)}</div>
+              <div class="feature"><i class="fas fa-door-open"></i> ${property.rooms} ${getRoomWord(property.rooms)}</div>
+              <div class="feature"><i class="fas fa-ruler-combined"></i> ${property.area} м²</div>
+              <div class="feature"><i class="fas fa-home"></i> ${getTypeName(property.type)}</div>
+            </div>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(property.address)}" target="_blank" title="Открыть в Google Maps">
+                ${property.address}
+              </a>
+            </div>
+            <div class="property-amenities">
+              ${property.features.map(feature => `
+                <span class="amenity">
+                  <i class="fas fa-check"></i> ${feature}
+                </span>
+              `).join('')}
+            </div>
+            <div class="property-actions-bottom">
+  <button class="btn book-btn" data-id="${property.id}" style="font-size: 8px !important;">
+                Забронировать просмотр
+              </button>
+  <button class="btn btn-outline chat-btn" data-id="${property.id}" style="font-size: 8px !important;">
+              Связаться с владельцем
+              </button>
+            </div>
+          </div>
+        `;
+        
+        propertyGrid.appendChild(propertyCard);
+      });
+      
+      // Add event listeners to booking buttons
+      document.querySelectorAll('.book-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const propertyId = parseInt(button.getAttribute('data-id'));
+          currentBookingProperty = properties.find(p => p.id === propertyId);
+          openBookingModal(currentBookingProperty);
+        });
+      });
+
+      // Add event listeners to chat buttons
+      document.querySelectorAll('.chat-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const propertyId = parseInt(button.getAttribute('data-id'));
+          currentChatProperty = properties.find(p => p.id === propertyId);
+          openChatModal(currentChatProperty);
+        });
+      });
+    }
+
+    // Setup pagination
+    function setupPagination(propertiesToPaginate, page = 1) {
+      pagination.innerHTML = '';
+      const pageCount = Math.ceil(propertiesToPaginate.length / itemsPerPage);
+      
+      if (pageCount <= 1) return;
+      
+      // Previous button
+      if (page > 1) {
+        const prevLink = document.createElement('a');
+        prevLink.href = '#';
+        prevLink.className = 'page-link';
+        prevLink.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        prevLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          currentPage = page - 1;
+          renderProperties(filteredProperties, currentPage);
+          setupPagination(filteredProperties, currentPage);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        pagination.appendChild(prevLink);
+      }
+      
+      // Page links
+      for (let i = 1; i <= pageCount; i++) {
+        const pageLink = document.createElement('a');
+        pageLink.href = '#';
+        pageLink.className = `page-link ${i === page ? 'active' : ''}`;
+        pageLink.textContent = i;
+        pageLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          currentPage = i;
+          renderProperties(filteredProperties, currentPage);
+          setupPagination(filteredProperties, currentPage);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        pagination.appendChild(pageLink);
+      }
+      
+      // Next button
+      if (page < pageCount) {
+        const nextLink = document.createElement('a');
+        nextLink.href = '#';
+        nextLink.className = 'page-link';
+        nextLink.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        nextLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          currentPage = page + 1;
+          renderProperties(filteredProperties, currentPage);
+          setupPagination(filteredProperties, currentPage);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        pagination.appendChild(nextLink);
+      }
+    }
+
+    // Helper functions
+    function getCityName(cityCode) {
+      const cities = {
+        'minsk': 'Минск',
+        'grodno': 'Гродно',
+        'vitebsk': 'Витебск',
+        'gomel': 'Гомель',
+        'brest': 'Брест',
+        'mogilev': 'Могилев'
+      };
+      return cities[cityCode] || cityCode;
+    }
+
+    function getTypeName(typeCode) {
+      const types = {
+        'apartment': 'Квартира',
+        'house': 'Дом',
+        'office': 'Офис',
+        'commercial': 'Коммерческая'
+      };
+      return types[typeCode] || typeCode;
+    }
+
+    function getRoomWord(count) {
+      if (count === 1) return 'комната';
+      if (count >= 2 && count <= 4) return 'комнаты';
+      return 'комнат';
+    }
+
+    function getPropertyWord(count) {
+      if (count % 10 === 1 && count % 100 !== 11) return 'объект';
+      if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'объекта';
+      return 'объектов';
+    }
+
+    function getReviewWord(count) {
+      if (count % 10 === 1 && count % 100 !== 11) return 'отзыв';
+      if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'отзыва';
+      return 'отзывов';
+    }
+
+    // Filter properties
+    function filterProperties() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const typeFilter = propertyTypeFilter.value;
+      const cityFilterValue = cityFilter.value;
+      const priceRange = priceRangeFilter.value;
+      const roomsFilterValue = roomsFilter.value;
+      
+      filteredProperties = properties.filter(property => {
+        // Search term filter
+        const matchesSearch = 
+          property.title.toLowerCase().includes(searchTerm) ||
+          property.description.toLowerCase().includes(searchTerm) ||
+          property.address.toLowerCase().includes(searchTerm);
+        
+        if (!matchesSearch) return false;
+        
+        // Type filter
+        if (typeFilter !== 'all' && property.type !== typeFilter) return false;
+        
+        // City filter
+        if (cityFilterValue !== 'all' && property.city !== cityFilterValue) return false;
+        
+        // Price range filter
+        if (priceRange !== 'all') {
+          const [min, max] = priceRange.split('-').map(Number);
+          if (priceRange.endsWith('+')) {
+            if (property.price < min) return false;
+          } else {
+            if (property.price < min || property.price > max) return false;
+          }
+        }
+        
+        // Rooms filter
+        if (roomsFilterValue !== 'all') {
+          if (roomsFilterValue === '4+' && property.rooms < 4) return false;
+          if (roomsFilterValue !== '4+' && property.rooms !== parseInt(roomsFilterValue)) return false;
+        }
+        
+        return true;
+      });
+      
+      currentPage = 1;
+      renderProperties(filteredProperties, currentPage);
+      setupPagination(filteredProperties, currentPage);
+      updateResultsCount(filteredProperties.length);
+    }
+
+    function updateResultsCount(count) {
+      resultsCount.textContent = `Найдено: ${count} ${getPropertyWord(count)}`;
+    }
+
+    // Reset filters
+    function resetFilters() {
+      searchInput.value = '';
+      propertyTypeFilter.value = 'all';
+      cityFilter.value = 'all';
+      priceRangeFilter.value = 'all';
+      roomsFilter.value = 'all';
+      filterProperties();
+    }
+
+    // Booking modal
+    function openBookingModal(property) {
+      bookingTitle.textContent = `Забронировать просмотр: ${property.title}`;
+      bookingForm.style.display = 'block';
+      bookingSuccess.style.display = 'none';
+      bookingModal.classList.add('active');
+      
+      // Set tomorrow as default date
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const formattedDate = tomorrow.toISOString().split('T')[0];
+      document.getElementById('bookingDate').value = formattedDate;
+    }
+
+    function closeBookingModal() {
+      bookingModal.classList.remove('active');
+    }
+
+    function showBookingSuccess() {
+      bookingForm.style.display = 'none';
+      bookingSuccess.style.display = 'block';
+    }
+
+    // Event listeners
+    if (searchInput) {
+      searchInput.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') filterProperties();
+      });
+    }
+
+    if (searchBtn) {
+      searchBtn.addEventListener('click', filterProperties);
+    }
+
+    if (propertyTypeFilter) {
+      propertyTypeFilter.addEventListener('change', filterProperties);
+    }
+
+    if (cityFilter) {
+      cityFilter.addEventListener('change', filterProperties);
+    }
+
+    if (priceRangeFilter) {
+      priceRangeFilter.addEventListener('change', filterProperties);
+    }
+
+    if (roomsFilter) {
+      roomsFilter.addEventListener('change', filterProperties);
+    }
+
+    if (resetFiltersBtn) {
+      resetFiltersBtn.addEventListener('click', resetFilters);
+    }
+
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', closeBookingModal);
+    }
+
+    if (cancelBookingBtn) {
+      cancelBookingBtn.addEventListener('click', closeBookingModal);
+    }
+
+    if (closeSuccessBtn) {
+      closeSuccessBtn.addEventListener('click', closeBookingModal);
+    }
+
+    if (confirmBookingBtn) {
+      confirmBookingBtn.addEventListener('click', () => {
+        const name = document.getElementById('bookingName')?.value;
+        const phone = document.getElementById('bookingPhone')?.value;
+        const email = document.getElementById('bookingEmail')?.value;
+        const date = document.getElementById('bookingDate')?.value;
+        const time = document.getElementById('bookingTime')?.value;
+        
+        if (!name || !phone || !email || !date || !time) {
+          alert('Пожалуйста, заполните все обязательные поля');
+          return;
+        }
+        
+        // In a real app, you would send this data to the server
+        console.log('Booking submitted:', {
+          property: currentBookingProperty,
+          customer: { name, phone, email },
+          date,
+          time
+        });
+        
+        showBookingSuccess();
+      });
+    }
+
+    // Close modal when clicking outside
+    if (bookingModal) {
+      bookingModal.addEventListener('click', (e) => {
+        if (e.target === bookingModal) {
+          closeBookingModal();
+        }
+      });
+    }
+
+    // Chat functionality
+    const chatModal = document.getElementById('chatModal');
+    const chatModalClose = document.getElementById('chatModalClose');
+    const chatMessages = document.getElementById('chatMessages');
+    const messageInput = document.getElementById('messageInput');
+    const sendMessageBtn = document.getElementById('sendMessage');
+    const chatTitle = document.getElementById('chatTitle');
+    const ownerPhone = document.getElementById('ownerPhone');
+
+    let currentChatProperty = null;
+
+    // Add event listeners to chat buttons
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.chat-btn')) {
+        const btn = e.target.closest('.chat-btn');
+        const propertyId = parseInt(btn.getAttribute('data-id'));
+        currentChatProperty = properties.find(p => p.id === propertyId);
+        openChatModal(currentChatProperty);
+      }
+    });
+
+    function openChatModal(property) {
+      chatTitle.textContent = `Чат с владельцем: ${property.title}`;
+      ownerPhone.textContent = property.phone;
+      const currentTime = new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+      chatMessages.innerHTML = `
+        <div class="message received">
+          Здравствуйте! Я владелец этого объекта. Чем могу помочь?
+          <div class="chat-time">${currentTime}</div>
+        </div>
+      `;
+      chatModal.classList.add('active');
+      messageInput.focus();
+    }
+
+    function closeChatModal() {
+      chatModal.classList.remove('active');
+      messageInput.value = '';
+    }
+
+    function sendMessage() {
+      const message = messageInput.value.trim();
+      if (!message) return;
+
+      const currentTime = new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+
+      // Add sent message
+      chatMessages.innerHTML += `
+        <div class="message sent">
+          ${message}
+          <div class="chat-time">${currentTime}</div>
+        </div>
+      `;
+
+      // Clear input
+      messageInput.value = '';
+
+      // Scroll to bottom
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      // Simulate response (in a real app, this would be handled by a server)
+      setTimeout(() => {
+        const responseTime = new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+        chatMessages.innerHTML += `
+          <div class="message received">
+            Спасибо за ваше сообщение! Я свяжусь с вами в ближайшее время.
+            <div class="chat-time">${responseTime}</div>
+          </div>
+        `;
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 1000);
+    }
+
+    // Chat event listeners
+    chatModalClose.addEventListener('click', closeChatModal);
+
+    sendMessageBtn.addEventListener('click', sendMessage);
+
+    messageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    // Close chat modal when clicking outside
+    chatModal.addEventListener('click', (e) => {
+      if (e.target === chatModal) {
+        closeChatModal();
+      }
+    });
+
+    // Initialize
+    renderProperties(filteredProperties, currentPage);
+    setupPagination(filteredProperties, currentPage);
+    updateResultsCount(filteredProperties.length);
+
+    // Back to top button functionality
+    const backToTop = document.getElementById('backToTop');
+    
+    function toggleBackToTop() {
+      if (window.scrollY > 100) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }
+    
+    // Show/hide button on scroll
+    window.addEventListener('scroll', toggleBackToTop);
+    
+    // Show/hide button on page load
+    document.addEventListener('DOMContentLoaded', toggleBackToTop);
+    
+    // Scroll to top on click
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Call Modal functionality
+    let callInterval;
+    let seconds = 0;
+    let ringtone = null;
+
+    function showCallModal(event) {
+      event.preventDefault();
+      const modal = document.getElementById('callModal');
+      modal.classList.add('active');
+      
+      // Создаем новый звук звонка только при открытии модального окна
+      if (!ringtone) {
+        ringtone = new Audio('https://www.soundjay.com/phone/sounds/phone-calling-1.mp3');
+        ringtone.loop = true;
+        ringtone.play();
+      }
+
+      // Запускаем таймер сразу
+      startCallTimer();
+    }
+
+    function closeCallModal() {
+      const modal = document.getElementById('callModal');
+      modal.classList.remove('active');
+      stopCallTimer();
+      
+      // Останавливаем звук звонка и очищаем ссылку
+      if (ringtone) {
+        ringtone.pause();
+        ringtone.currentTime = 0;
+        ringtone = null;
+      }
+    }
+
+    function startCallTimer() {
+      seconds = 0;
+      callInterval = setInterval(() => {
+        seconds++;
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        document.getElementById('callTimer').textContent = 
+          `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+      }, 1000);
+    }
+
+    function stopCallTimer() {
+      clearInterval(callInterval);
+      document.getElementById('callTimer').textContent = '00:00';
+    }
+
+    // Закрытие модального окна при клике вне его
+    document.getElementById('callModal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('callModal')) {
+        closeCallModal();
+      }
+    });
+  </script>
+  <a href="#" class="back-to-top" id="backToTop">
+  </a>
+</body>
+</html>
